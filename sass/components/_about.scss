@@ -1,0 +1,160 @@
+
+.section-about {
+    max-width: 130rem;
+    margin: 0 auto;
+    height: 100vh;
+}
+
+.about {
+
+    width: 90%;
+    margin: 0 auto;
+    height: 80vh;
+
+    &__img {
+
+        width: 100%;
+        text-align: center;
+        align-self: center;
+        position: relative;
+
+            &::before, 
+            &::after {
+                display: block;
+                content: "";
+                position: absolute;
+                width: 10rem;
+                border: 1px solid $color-primary-main;
+
+                z-index: 1;
+            }
+
+            &::before {
+                top: -1rem;
+                left: 7.5rem;
+            }
+
+            &::after {
+                bottom: -1rem;
+                right: 7.5rem;
+            }    
+
+        &-1 {
+            width: 60%;
+            border-radius: 3px;
+            transition: all .2s;
+            position: relative;
+
+            @include respond (phone) {
+                width: 40%;
+            }
+        }
+
+        &-front {
+            width: 60%;
+            display: block;
+            font-size: 1.8rem;
+            padding: 1rem 2rem;
+            @include absCenterabout;
+            color: $color-white-glass;
+            transition: all .3s;
+            background-color: $color-new-2;
+            font-weight: 400;
+
+            @include respond (phone) {
+                width: 40%;
+                font-size: 1rem;
+            }
+
+            &:hover {
+                width: 60%;
+                background-color: $color-new-1;
+                cursor: pointer;
+
+                @include respond (phone) {
+                    width: 30%;
+                }
+            }
+        }
+    }
+
+    &__text {
+
+        margin: auto 0;
+
+        @include respond (phone) {
+            padding: 3.2rem;
+        }
+
+        &-sub {
+            font-size: 1.4rem;
+            margin-bottom: .5rem;
+            color: $color-nav-hover;
+            font-weight: 400;
+        }
+
+        &-main {
+            font-size: 1.8rem;
+            letter-spacing: .1rem;
+            line-height: 1.5;
+            color: $color-grey-light-1;
+        }
+    }  
+
+    &__icon {
+        font-size: 2.2rem;
+        justify-content: center;
+        color: $color-primary-main;
+    }
+
+    &__grid-03 {
+        width: 100%;
+        margin: 0 auto;
+        margin-top: 4rem;
+
+        .heading-tertiary {
+            display: inline-block;
+            font-size: 1.8rem;
+            letter-spacing: .1rem;
+            margin-bottom: 2rem;
+            background-image: linear-gradient(to right, $color-primary-main, $color-icon);
+            -webkit-background-clip: text;
+            color: transparent;
+            transition: all .3s;
+
+            &:hover {
+                transform: rotate(3deg) scale(1.2) skew(7deg);
+                
+            }
+        }
+
+        &-sell02 {
+            display: flex;
+            gap: 2rem;
+
+            @include respond (phone) {
+                gap: 1rem;
+            }
+        }
+
+        &-text {
+            display: flex;
+            gap: .5rem;
+            align-items: center;
+        }
+
+        &-para {
+            font-size: 1.4rem;
+            background-image: linear-gradient(to right, $color-primary-main, $color-icon);
+            -webkit-background-clip: text;
+            color: transparent;
+            letter-spacing: .1rem;
+        }
+
+        &-icon {
+            font-size: 2.2rem;
+            color: $color-icon;
+        }
+    }
+
+}

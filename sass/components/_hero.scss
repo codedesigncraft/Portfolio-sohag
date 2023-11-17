@@ -1,0 +1,127 @@
+.section-hero {
+    max-width: 130rem;
+    height: 100vh;
+    margin: 0 auto;
+}
+
+.hero {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    position: fixed;
+    left: 0;
+    top: 25%;
+
+    &__icon {
+        
+        transition: all .3s;
+
+        &:link,
+        &:visited {
+            font-size: 1.8rem;
+            color: $color-primary-main;
+            padding: 0 2rem;
+        }
+
+        &:hover,
+        &:active {
+            color: $color-icon;
+            transform: scale(1.2);
+        }
+    }
+}
+
+
+
+.container {
+
+    margin: 0 auto;
+    align-items: center;
+    height: 80vh;
+    margin-top: 5rem;
+
+    @include respond (phone) {
+        margin-top: 8rem;
+    }
+
+    &__btn {
+        display: flex;
+        gap: 2rem;
+    }
+
+    &__text {
+
+        justify-content: center;
+        align-self: center;
+        color: $color-grey-light-1;
+        padding: 0 2rem 0 4rem;
+
+        &-p1 {
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+            color: $color-primary-main;
+        }
+
+        &-p2 {
+            font-size: 1.8rem;
+            letter-spacing: .1rem;
+            line-height: 1.5;
+            margin-top: 2rem;
+        }
+    }
+
+    &__img {
+            width: 100%;
+            text-align: center;
+            justify-content: center;
+            align-self: center;
+            position: relative;
+
+            &::before, 
+            &::after {
+                display: block;
+                content: "";
+                position: absolute;
+                width: 10rem;
+                border: 1px solid $color-primary-main;
+
+                z-index: 1;
+            }
+
+            &::before {
+                top: 6rem;
+                left: 13rem;
+            }
+
+            &::after {
+                bottom: -1rem;
+                right: 13rem;
+            }
+
+        &-main {
+            width: 50%;
+            border-radius: 3px;
+            // box-shadow: 0 .2rem 1rem rgba($color-black-light, .2);
+            margin-top: 7rem;
+
+            @include respond (phone) {
+                width: 40%;
+            }
+        }
+    }
+}
+
+.heading-secondary {
+    display: inline-block;
+    font-size: 3.2rem;
+    background-image: linear-gradient(to right, $color-primary-main, $color-icon);
+    -webkit-background-clip: text;
+    color: transparent;
+    letter-spacing: .1rem;
+    transition: all .3s;
+
+    &:hover {
+        transform: rotate(3deg) scale(1.2) skew(7deg);
+        
+    }
+}
